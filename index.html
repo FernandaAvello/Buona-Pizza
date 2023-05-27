@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <main>
+    <section>
+      <div class="row">
+        <div class="col-6">
+          <h3>Mejora tu pizza</h3>
+          <p>Puedes elegir 3 ingredientes gratis. Cada ingrediente adicional cuesta $800 pesos cada uno.</p>
+          <p>Ingredientes disponibles para agregar a su pizza:</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Carne" id="meatCheckbox" onchange="getIngredientsSelected()">
+            <label class="form-check-label" for="meatCheckbox">Carne</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Pollo" id="chickenCheckbox" onchange="getIngredientsSelected()">
+            <label class="form-check-label" for="chickenCheckbox">Pollo</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Tocino" id="baconCheckbox" onchange="getIngredientsSelected()">
+            <label class="form-check-label" for="baconCheckbox">Tocino</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Mozzarella" id="mozzarellaCheckbox" onchange="getIngredientsSelected()">
+            <label class="form-check-label" for="mozzarellaCheckbox">Mozzarella</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Champiñon" id="mushroomCheckbox" onchange="getIngredientsSelected()">
+            <label class="form-check-label" for="mushroomCheckbox">Champiñon</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Cebolla" id="onionCheckbox" onchange="getIngredientsSelected()">
+            <label class="form-check-label" for="onionCheckbox">Cebolla</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Piña" id="pinneappleCheckbox" onchange="getIngredientsSelected()">
+            <label class="form-check-label" for="pinneappleCheckbox">Piña</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Pimentón" id="pepperCheckbox" onchange="getIngredientsSelected()">
+            <label class="form-check-label" for="pepperCheckbox">Pimentón</label>
+          </div>
+          <div class="mt-5">
+            <p class="mb-0">Los ingredientes seleccionados son:</p>
+            <strong id="listIngredientsSelected"></strong>
+            <p class="mb-0">Los ingredientes <strong>extras</strong> seleccionados son:</p>
+            <strong id="listIngredientsExtraSelected"></strong>
+          </div>
+        </div>
+        <div class="col-6">
+          <h3>Resumen del Pedido</h3>
+          <div class="mt-5">
+            <div class="d-flex justify-content-between">
+              <h5>Pizza XL</h5>
+              <strong>$15.000</strong>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between">
+              <h5>Ingredientes Extras</h5>
+              <p id="ingredientsExtraPrice"></p>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between">
+              <h5>Propina</h5>
+              <p id="tips">$1.000</p>
+            </div>
+            <hr>
+            <div class="row">
+              <p>Ingrese la propina a continuación:</p>
+              <div class="col-6">
+                <input class="form-control" type="number" value="" id="tipInput" placeholder="Ingresa propina..." onkeyup="getTip()">
+              </div>
+              <div class="col-6">
+                <button class="btn btn-dark" onclick="createNewOrder()">Enviar Pedido con Propina</button>
+              </div>
+            </div>
+            <h3 id="message" class="mt-5"></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+</body>
+</html>
